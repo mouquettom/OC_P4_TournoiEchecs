@@ -25,7 +25,7 @@ sont sauvegardées et chargées à l'aide de fichiers JSON.
 
 Lancez la console, placez-vous dans le dossier de votre choix et clonez le dépôt :
 
-- git clone https://github.com/mouquettom/OC_P2_BooksToScrape/tree/master
+- git clone https://github.com/mouquettom/OC_P4_TournoiEchecs.git
 
 Allez dans le dossier OPC_P4_Tournoi_Echecs, puis créez un nouvel environnement virtuel :
 
