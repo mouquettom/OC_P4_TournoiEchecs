@@ -35,7 +35,11 @@ class TournoiController:
 
     def jouer_tournoi(self):
         shuffle(self.tournoi.joueurs)
-        nb_tours = int(input("\nVeuillez indiquer le nombre de tours ? "))
+        nb_tours = ""
+        while not nb_tours.isdigit():
+            nb_tours = input("\nVeuillez indiquer le nombre de tours ? ")
+
+        nb_tours = int(nb_tours)
         for _ in range(nb_tours):
             self.tournoi.joueurs_restants = self.tournoi.joueurs.copy()
             while len(self.tournoi.joueurs_restants) >= 2:
@@ -52,3 +56,13 @@ class TournoiController:
     def afficher_classement(self):
         self.tournoi.joueurs.sort(key=lambda joueur: joueur.points, reverse=True)
         TournoiView.afficher_classement(self.tournoi.joueurs)
+
+    def rapport_joueurs(self):
+        joueurs = self.tournoi.joueurs_par_ordre_alphabetique()
+        TournoiView.afficher_joueurs(joueurs)
+
+    def rapport_tournois(self, tournois):
+        TournoiView.afficher_tournois(tournois)
+
+    def rapport_details_tournoi(self):
+        TournoiView.afficher_details_tournoi(self.tournoi)

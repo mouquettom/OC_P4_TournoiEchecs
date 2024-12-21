@@ -89,3 +89,12 @@ class Tournoi:
             print(f"\nLe classement a été enregistré dans : {path}.")
         except IOError as e:
             print(f"Erreur lors de l'écriture dans le fichier : {e}")
+
+    def joueurs_par_ordre_alphabetique(self):
+        return sorted(self.joueurs, key=lambda joueur: joueur.nom)
+
+    def details_tournoi(self):
+        return f"{self.nom} - {self.date_debut} au {self.date_fin}"
+
+    def liste_tours_et_matchs(self):
+        return [(tour.nom, tour.matchs) for tour in self.tours]

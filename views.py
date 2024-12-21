@@ -28,7 +28,7 @@ class TournoiView:
 
     @staticmethod
     def demander_info_tournoi():
-        nom = input("Le nom du Tournoi : ")
+        nom = input("\nLe nom du Tournoi : ")
         lieu = input("Le lieu du Tournoi : ")
         date_debut = TournoiView.demander_date_valide("La date de début (JJ/MM/AAAA) : ")
         date_fin = TournoiView.demander_date_valide("La date de fin (JJ/MM/AAAA) : ")
@@ -41,3 +41,19 @@ class TournoiView:
         genre = input("Quel est le genre du joueur (H/F) : ")
         date_naissance = TournoiView.demander_date_valide("Quelle est la date de naissance du joueur (JJ/MM/AAAA) : ")
         return prenom, nom, genre, date_naissance
+
+    @staticmethod
+    def afficher_joueurs(joueurs):
+        print("\nListe des joueurs (ordre alphabétique) :")
+        for joueur in joueurs:
+            print(f"- {joueur.nom} {joueur.prenom}")
+
+    @staticmethod
+    def afficher_tournois(tournois):
+        print("\nListe des tournois :")
+        for tournoi in tournois:
+            print(f"- {tournoi.nom}")
+
+    @staticmethod
+    def afficher_details_tournoi(tournoi):
+        print(f"\nDétails du tournoi : {tournoi.details_tournoi()}")
